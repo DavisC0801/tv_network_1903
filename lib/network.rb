@@ -18,4 +18,14 @@ class Network
     end
     hi.actor
   end
+
+  def payroll
+    payrollhash = {}
+    @shows.each do |show|
+      show.characters.each do |character|
+        payrollhash.store(character.actor, character.salary)
+      end
+    end
+    payrollhash
+  end
 end
