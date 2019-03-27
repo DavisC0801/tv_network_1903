@@ -6,7 +6,7 @@ describe Show do
   before do
     @kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
     @michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
-    @knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
+    @knight_rider = Show.new("Knight Rider", "Glen Larson", [@michael_knight, @kitt])
   end
 
   it "has a name" do
@@ -18,7 +18,7 @@ describe Show do
   end
 
   it "has characters" do
-  expect(@knight_rider.characters).to eq([@kitt, @michael_knight])
+  expect(@knight_rider.characters).to eq([@michael_knight, @kitt])
   end
 
   it "finds the total salary for the show" do
