@@ -36,5 +36,14 @@ describe Network do
     it "finds the highest paid actor in the network" do
       expect(@nbc.highest_paid_actor).to eq("Amy Poehler")
     end
+
+    it "finds the entire payroll" do
+      expected = {"David Hasselhoff" => 1600000,
+                  "William Daniels" => 1000000,
+                  "Amy Poehler" => 2000000,
+                  "Nick Offerman" => 1400000}
+
+      expect(@nbc.payroll).to eq(expected)
+    end
   end
 end
